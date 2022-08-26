@@ -1,7 +1,16 @@
-#!/bin/sh
+#!/bin/bash
 
-. definitions.config
-. pride.config
+if [ -f "$HOME/.config/pride-files/definitions.config" ]; then
+	. $HOME/.config/pride-files/definitions.config
+else
+	. /usr/local/bin/pride-files/definitions.config
+fi
+
+if [ -f "$HOME/.config/pride-files/pride.config" ]; then
+	. $HOME/.config/pride-files/pride.config
+else
+	. /usr/local/bin/pride-files/pride.config
+fi
 
 minSize=10
 
